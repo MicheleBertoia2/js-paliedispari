@@ -4,9 +4,9 @@
 // Sommiamo i due numeri
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 // Dichiariamo chi ha vinto.
-
-const sceltaUtente = 'pari' //prompt('scegli pari o dispari');
-const numeroUtente = 5 //parseInt(prompt('inserisci un numero da 1 a 5'));
+const h1 = document.querySelector('h1');
+const sceltaUtente = prompt('scegli pari o dispari');
+const numeroUtente = parseInt(prompt('inserisci un numero da 1 a 5'));
 
 const numComputer = generaNumero();
 
@@ -18,8 +18,17 @@ if (sceltaUtente === 'pari') {
   sceltaPari = false;
 }
 
+if (controlloPari(numSomma) === sceltaPari) {
+  h1.innerHTML = `
+  Complimenti hai vinto! il tuo numero (${numeroUtente}) + quello del computer (${numComputer}) fa ${numSomma}
+  `
+}else {
+  h1.innerHTML =  `
+  Hai perso! il tuo numero (${numeroUtente}) + quello del computer (${numComputer}) fa ${numSomma}
+  `
+}
 
-
+console.log(numSomma, numComputer,);
 
 
 function generaNumero() {
